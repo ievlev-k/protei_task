@@ -1,26 +1,17 @@
 package org.pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-
-public class AuthPage extends BasePage{
-
- 
-    
-
-
-
+public class AuthPage extends BasePage {
 
 
     private final WebElement authButton = driver.findElement(By.xpath(
             "//*[@id='authButton']"));
 
 
-    private final WebElement email  = driver.findElement(By.xpath(
+    private final WebElement email = driver.findElement(By.xpath(
             "//*[@id='loginEmail']"));
 
 
@@ -28,17 +19,13 @@ public class AuthPage extends BasePage{
             "//*[@id='loginPassword']"));
 
 
-
-
-
-
-    public AuthPage(WebDriver webDriver){
+    public AuthPage(WebDriver webDriver) {
         super(webDriver);
 
 
     }
 
-    public HomePage authorization(String userName, String userPassword){
+    public HomePage authorization(String userName, String userPassword) {
 
         email.sendKeys(userName);
         System.out.println(userName);
@@ -48,8 +35,6 @@ public class AuthPage extends BasePage{
 
         return new HomePage(driver);
     }
-
-
 
 
 }
